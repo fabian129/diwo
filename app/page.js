@@ -106,23 +106,10 @@ export default function Home() {
             }}
           />
           <div className="w-24 h-[1px] bg-white/20 overflow-hidden rounded-full">
-            <div
-              className="h-full bg-white/80 rounded-full"
-              style={{
-                animation: 'preloader-bar 1.8s ease-in-out forwards',
-              }}
-            />
+            <div className="h-full bg-white/80 rounded-full preloader-bar" />
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes preloader-bar {
-          0% { width: 0%; }
-          60% { width: 80%; }
-          100% { width: 100%; }
-        }
-      `}</style>
 
       <main>
       {/* ═══════════ NAVBAR — Fintech SaaS / Stripe (from Navbar.jsx) ═══════════ */}

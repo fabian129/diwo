@@ -117,3 +117,13 @@ html {
   opacity: 0;
   transform: translateY(20px);
 }
+
+/* Preloader bar */
+@keyframes preloader-bar {
+  0% { width: 0%; }
+  60% { width: 80%; }
+  100% { width: 100%; }
+}
+.preloader-bar {
+  animation: preloader-bar 1.8s ease-in-out forwards;
+}
