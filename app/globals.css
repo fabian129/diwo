@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* Scroll reveal utility from NovaStudio template */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Marquee from NovaStudio */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee-scroll {
+  animation: marquee-scroll 30s linear infinite;
+}
+.animate-marquee-scroll:hover {
+  animation-play-state: paused;
+}
+.mask-edges {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Clip text utility */
+.clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Accordion from NovaStudio */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.accordion-content.open {
+  grid-template-rows: 1fr;
+}
+.accordion-inner {
+  overflow: hidden;
+}
+
+/* Marquee from Growth.io */
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: scroll-marquee 30s linear infinite;
+}
+.mask-gradient {
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* No scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Fintech SaaS / Stripe Hero Animations ── */
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1440px); }
+}
+.animate-wave-1 {
+  animation: wave 18s linear infinite;
+}
+.animate-wave-2 {
+  animation: wave 25s linear infinite;
+}
+.animate-wave-3 {
+  animation: wave 14s linear infinite;
+}
+
+@keyframes aura {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-aura {
+  animation: aura 15s ease-in-out infinite;
+}
+
+@keyframes revealWord {
+  0% {
+    transform: translateY(110%) rotate(3deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+.animate-reveal-word {
+  animation: revealWord 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes fadeUpDelayed {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up-delayed {
+  animation: fadeUpDelayed 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
