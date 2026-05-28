@@ -76,8 +76,55 @@ export default function Home() {
 
     return () => lenis.destroy();
   }, []);
+
+  // Preloader
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <main>
+    <>
+      {/* ═══════════ PRELOADER ═══════════ */}
+      <div
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0a0a0a] transition-all duration-700 ease-[cubic-bezier(0.76,0,0.24,1)]"
+        style={{
+          opacity: loading ? 1 : 0,
+          pointerEvents: loading ? 'all' : 'none',
+          transform: loading ? 'translateY(0)' : 'translateY(-100%)',
+        }}
+      >
+        <div className="flex flex-col items-center gap-6">
+          <img
+            src="/diwo-logo.webp"
+            alt="Diwo"
+            className="h-10 md:h-14 object-contain invert transition-all duration-1000 ease-out"
+            style={{
+              opacity: loading ? 1 : 0,
+              transform: loading ? 'scale(1)' : 'scale(0.8)',
+            }}
+          />
+          <div className="w-24 h-[1px] bg-white/20 overflow-hidden rounded-full">
+            <div
+              className="h-full bg-white/80 rounded-full"
+              style={{
+                animation: 'preloader-bar 1.8s ease-in-out forwards',
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes preloader-bar {
+          0% { width: 0%; }
+          60% { width: 80%; }
+          100% { width: 100%; }
+        }
+      `}</style>
+
+      <main>
       {/* ═══════════ NAVBAR — Fintech SaaS / Stripe (from Navbar.jsx) ═══════════ */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full transition-all duration-300 bg-slate-50/80 backdrop-blur-md border-b border-slate-200/50">
         <div className="flex items-center justify-between py-4 px-6 lg:px-12 w-full max-w-screen-2xl">
@@ -188,6 +235,7 @@ export default function Home() {
       {/* ═══════════ 9. FOOTER — Growth.io dark (template 64) ═══════════ */}
       <FooterSection />
     </main>
+    </>
   );
 }
 
