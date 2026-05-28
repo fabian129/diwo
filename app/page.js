@@ -273,7 +273,7 @@ function HeroSection() {
       </div>
 
       <div className="relative z-20 flex-grow flex items-center w-full max-w-screen-2xl mx-auto h-full my-auto">
-        <div className="w-full lg:w-[65%] xl:w-[55%] flex flex-col items-start mt-12 md:mt-0">
+        <div className="w-full lg:w-[65%] xl:w-[55%] flex flex-col items-start mt-12 md:mt-0 pl-4 md:pl-10">
           <div className="mb-6 flex items-center gap-2 text-xs font-normal text-slate-600 bg-white/80 backdrop-blur-md py-1.5 px-3 rounded-full border border-slate-200/80 shadow-sm animate-fade-up-delayed" style={{ animationDelay: '0.1s' }}>
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neutral-400 opacity-75"></span>
@@ -285,7 +285,7 @@ function HeroSection() {
           <RevealText
             text="Vi hjälper er att lyckas med den digitala arbetsplatsen."
             as="h1"
-            className="text-5xl md:text-6xl lg:text-[5rem] leading-[1.05] tracking-tight text-slate-900 font-normal mb-6"
+            className="text-5xl md:text-6xl lg:text-[5rem] leading-[1.15] tracking-tight text-slate-900 font-normal mb-6"
             delayOffset={0.2}
           />
 
